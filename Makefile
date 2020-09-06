@@ -77,6 +77,7 @@ nginx/status/%: ## '%'にapp01/app02を指定すると、指定されたWebサ�
 
 mysql/start: ## app03でmysqlを起動する
 	@echo 'app03 mysql start.'
+	@$(DOCKER_EXEC) isucon7-app03 sudo find /var/lib/mysql -type f -exec touch {} \;
 	@$(DOCKER_EXEC) isucon7-app03 sudo /etc/init.d/mysql start
 
 mysql/restart: ## app03でmysqlを再起動する
