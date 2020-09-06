@@ -105,7 +105,7 @@ app/start/go: ## 全Webサーバーでgoのwebappが起動する
 	$(MAKE) -j app/start/go/app01 app/start/go/app02
 
 app/start/go/%:  ## '%'にapp01/app02を指定すると、指定されたWebサーバーでgoのwebappが起動する
-	$(DOCKER_EXEC) isucon7-$* sh -x /home/isucon/isubata/docker/app/setup_go.sh
+	$(DOCKER_EXEC) isucon7-$* sh -x /home/isucon/isubata/docker/app/setup_go.sh $*
 
 # ==========================
 # bench
